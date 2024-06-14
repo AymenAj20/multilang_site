@@ -1,0 +1,28 @@
+#: main/templates/article_list.html:7
+msgid "Article List"
+msgstr "Liste d'Articles"
+
+#: main/templates/article_list.html:10
+msgid "Articles"
+msgstr "Les Articles"
+
+#: main/templates/article_list.html:16
+msgid "Published on"
+msgstr "Publie le"
+
+#: main/templates/article_list.html:21
+msgid "Current Language:"
+msgstr "Langue actuelle :"
+
+#: main/templates/article_list.html:27
+msgid "English"
+msgstr "Anglais"
+
+#: main/templates/article_list.html:33
+#, fuzzy
+#| msgid "Francais"
+msgid "Franais"
+msgstr "Francais"
+
+#~ msgid "Content of article"
+#~ msgstr "Contenu de l'article"

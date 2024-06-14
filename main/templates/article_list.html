@@ -1,0 +1,37 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Article List" %}</title>
+</head>
+<body>
+    <h1>{% trans "Articles" %}</h1>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.content }}</p>
+            <p>{% trans "Published on" %}: {{ article.publication_date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        {% trans "Current Language:" %} {{ LANGUAGE_CODE }}
+    </p>
+    <p>
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="language" value="en">
+            <button type="submit">{% trans "English" %}</button>
+        </form>
+        |
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="language" value="fr">
+            <button type="submit">{% trans "Français" %}</button>
+        </form>
+    </p>
+</body>
+</html>
