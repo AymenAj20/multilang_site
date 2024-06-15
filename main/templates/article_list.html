@@ -5,33 +5,78 @@
 <head>
     <meta charset="UTF-8">
     <title>{% trans "Article List" %}</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Styles CSS personnalisés -->
+    <style>
+        body {
+            padding: 20px;
+        }
+        .article-list {
+            margin-top: 20px;
+        }
+        .article-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .article-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .article-content {
+            margin-top: 10px;
+        }
+        .article-date {
+            font-style: italic;
+            color: #666;
+        }
+        .current-language {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>{% trans "Articles" %}</h1>
-    <ul>
-        {% for article in articles %}
-        <li>
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.content }}</p>
-            <p>{% trans "Published on" %}: {{ article.publication_date }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    <p>
-        {% trans "Current Language:" %} {{ LANGUAGE_CODE }}
-    </p>
-    <p>
-        <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="language" value="en">
-            <button type="submit">{% trans "English" %}</button>
-        </form>
-        |
-        <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="language" value="fr">
-            <button type="submit">{% trans "Français" %}</button>
-        </form>
-    </p>
+    <div class="container">
+        <h1>{% trans "Articles" %}</h1>
+        <div class="article-list">
+            {% for article in articles %}
+            <div class="article-card">
+                <h2 class="article-title">{{ article.title }}</h2>
+                <p class="article-content">{{ article.content }}</p>
+                <p class="article-date">{% trans "Published on" %}: {{ article.publication_date }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% comment %} <p class="current-language">
+            {% trans "Current Language:" %} {{ LANGUAGE_CODE }}
+        </p> {% endcomment %}
+        <div class="d-flex justify-content-center">
+            <div class="col-auto">
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="en">
+                    <button type="submit" class="btn btn-primary">{% trans "English" %}</button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="fr">
+                    <button type="submit" class="btn btn-primary">{% trans "Français" %}</button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'chatbot_view' %}" class="btn btn-secondary">{% trans "Go to Chatbot" %}</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-avwD9Fq4B/x4zZ2thEus9odvO+1Ms7kLpA0lL2Wx5bvdqclN3p3Rty2bJ0B6jE8/" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+TpAHH8viE81N0AOmG/pD0ffFul5gmvPe1x" crossorigin="anonymous"></script>
 </body>
 </html>

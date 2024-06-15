@@ -1,0 +1,17 @@
+# Fichiers de configuration spécifiques à l'éditeur
+.vscode/
+.idea/
+
+# Fichiers et dossiers générés
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers de logs
+*.log
+
+# Fichiers de base de données
+*.sqlite3
+
+# Ignorer les fichiers de secrets
+.env
