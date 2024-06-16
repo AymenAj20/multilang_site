@@ -2,6 +2,13 @@
 
 Ce projet est une application Django de test technique pour ma candidature pour une alternance chez Diot-Siaci permettant l'Internationalisation et la gestion des articles de blog, de rechercher des articles et d'intégrer un chatbot basé sur l'API GPT d'OpenAI.
 
+## Limitations
+
+En raison de l'hébergement sur un plan gratuit, certaines fonctionnalités peuvent être limitées :
+
+    Permissions restreintes : Des problèmes liés aux permissions peuvent survenir sur le site déployé en raison des restrictions du plan gratuit.
+    Clé d'API expirée : Veuillez noter que la clé d'API que j'ai utilisée pour l'API GPT d'OpenAI est expirée, car j'ai atteint les limites d'utilisation gratuites.
+
 ## Prérequis
 
 Assurez-vous d'avoir installé les logiciels suivants sur votre machine :
