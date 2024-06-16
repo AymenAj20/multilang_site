@@ -2,27 +2,34 @@
 msgid "Article List"
 msgstr "Liste d'Articles"
 
-#: main/templates/article_list.html:10
+#: main/templates/article_list.html:43
 msgid "Articles"
 msgstr "Les Articles"
 
-#: main/templates/article_list.html:16
+#: main/templates/article_list.html:49
 msgid "Published on"
 msgstr "Publie le"
 
-#: main/templates/article_list.html:21
-msgid "Current Language:"
-msgstr "Langue actuelle :"
-
-#: main/templates/article_list.html:27
+#: main/templates/article_list.html:62
 msgid "English"
 msgstr "Anglais"
 
-#: main/templates/article_list.html:33
+#: main/templates/article_list.html:69
 #, fuzzy
 #| msgid "Francais"
 msgid "Franais"
 msgstr "Francais"
+
+#: main/templates/article_list.html:73
+msgid "Go to Chatbot"
+msgstr "Allez a Chatbot"
+
+#: main/templates/article_list.html:76
+msgid "Search Articles"
+msgstr "Rechercher des articles"
+
+#~ msgid "Current Language:"
+#~ msgstr "Langue actuelle :"
 
 #~ msgid "Content of article"
 #~ msgstr "Contenu de l'article"

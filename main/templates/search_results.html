@@ -2,43 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chatbot</title>
-    <!-- Bootstrap CDN  -->
+    <title>Search Results</title>
+    <!-- CDN Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <style>
-        body {
-            padding: 20px;
-        }
-        #chat-form {
-            margin-bottom: 20px;
-        }
-        .chat-response {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f9fa;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Chatbot</h1>
-        <form id="chat-form" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <textarea class="form-control" name="user_input" rows="4" placeholder="Type your message here"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form>
-        {% if response %}
-        <div class="chat-response">
-            {{ response|safe }}
+        <h1>Search Results for "{{ query }}"</h1>
+        <div class="article-list">
+            {% if articles %}
+                {% for article in articles %}
+                <div class="article-card">
+                    <h2 class="article-title">{{ article.title }}</h2>
+                    <p class="article-content">{{ article.content }}</p>
+                    <p class="article-date">Published on: {{ article.publication_date }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No articles found.</p>
+            {% endif %}
         </div>
-        {% endif %}
-        <a href="{% url 'article-list' %}" class="btn btn-secondary mt-3">Go To articles list</a>
+
+        <h2>Augmented Results</h2>
+        <div class="augmented-results">
+            {% if augmented_results %}
+                {% for result in augmented_results %}
+                <p>{{ result }}</p>
+                {% endfor %}
+            {% else %}
+                <p>No augmented results found.</p>
+            {% endif %}
+        </div>
+
     </div>
-    
+
     <!-- Scripts Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-avwD9Fq4B/x4zZ2thEus9odvO+1Ms7kLpA0lL2Wx5bvdqclN3p3Rty2bJ0B6jE8/" crossorigin="anonymous"></script>
