@@ -1,12 +1,12 @@
 # Multilang Site
 
-Ce projet est une application Django simple et multilingue permettant de gérer des articles de blog, de rechercher des articles et d'intégrer un chatbot basé sur l'API GPT-3 d'OpenAI.
+Ce projet est une application Django de test technique pour ma candidature pour une alternance chez Diot-Siaci permettant l'Internationalisation et la gestion des articles de blog, de rechercher des articles et d'intégrer un chatbot basé sur l'API GPT d'OpenAI.
 
 ## Prérequis
 
 Assurez-vous d'avoir installé les logiciels suivants sur votre machine :
 
-- Python 3.x
+- Python 3.11
 - pip
 - virtualenv
 
@@ -15,7 +15,7 @@ Assurez-vous d'avoir installé les logiciels suivants sur votre machine :
 1. Clonez ce dépôt :
 
     ```bash
-    git clone https://github.com/votre-utilisateur/multilang_site.git
+    git clone https://github.com/thadios1920/multilang_site
     cd multilang_site
     ```
 
@@ -76,11 +76,11 @@ Pour changer la langue de l'interface, utilisez les boutons disponibles en bas d
 
 ### Fonctionnalité de Recherche
 
-Utilisez la barre de recherche pour rechercher des articles par contenu. Les résultats affichés incluent les articles correspondants ainsi que les résultats augmentés par le modèle GPT-3.
+Utilisez la barre de recherche pour rechercher des articles par contenu. Les résultats affichés incluent les articles correspondants ainsi que les résultats augmentés par le modèle GPT.
 
 ### Chatbot
 
-Accédez à la page du chatbot pour poser des questions et obtenir des réponses générées par l'API GPT-3 d'OpenAI.
+Accédez à la page du chatbot pour poser des questions et obtenir des réponses générées par l'API GPT.
 
 ## Dépendances
 
